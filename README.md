@@ -1,4 +1,6 @@
 # deploy_tool
+Flutter implementation of Salesforce Deploy Tool.
+# deploy_tool
 
 A new Flutter project.
 
