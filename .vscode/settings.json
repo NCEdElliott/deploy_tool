@@ -1,3 +1,7 @@
 {
-    "editor.fontSize": 24
+    "editor.fontSize": 24,
+    "editor.fontLigatures": true,
+    "editor.fontVariations": true,
+    "editor.fontFamily": "'Fira Code Retina', 'Fira Code SemiBold', 'Courier New', monospace",
+    "editor.fontWeight": "bold"
 }
