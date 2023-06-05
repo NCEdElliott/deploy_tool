@@ -68,6 +68,8 @@ class AppConfig {
 // End of Command Section
 
 // Retrieve Command Section
-
+  static String getAccountMetadata() {
+    return " project retrieve start --metadata CustomObject:Account";
+  }
 // End of Retrieve Command Section
 }
