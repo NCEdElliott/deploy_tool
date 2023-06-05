@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:deploy_tool/helpers/shellHelper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -115,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ButtonBar(
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {shellHelper.retrieveMetadata();},
                   child: const Text('Text Button'),
                 ),
                 ElevatedButton(
