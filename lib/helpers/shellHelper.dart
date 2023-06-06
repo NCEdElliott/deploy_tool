@@ -8,21 +8,24 @@ class shellHelper {
     Directory workingDir =
         Directory("${AppConfig.getMacOSWorkingDir()}/TestProject");
 
+    Directory.current = Platform.pathSeparator + workingDir.path;
     Directory.current = workingDir;
 
-    var shell = Shell();
-
-    await shell
-        .run('sf project retrieve start --metadata CustomObject:Account');
-    // Process.run('ls', ['-l'],
-    //         runInShell: true, workingDirectory: workingDir.path.toString())
-    //     .then((ProcessResult results) {
-    //   print('Current Working Dir: ${workingDir.path}');
-    //   print('Exit Code: ${results.exitCode}');
-    //   print('Output: ${results.stdout}');
-    //   print('Error: ${results.stderr}');
-    //   output = results.stdout.toString();
-    // });
+    // await shell
+    //     .run('sf project retrieve start --metadata CustomObject:Account');
+    Process.run('ls', ['-l'],
+            environment: ShellEnvironment(),
+            includeParentEnvironment: true,
+            runInShell: true)
+        // workingDirectory: '${AppConfig.getMacOSWorkingDir()}/TestProject')
+        .then((ProcessResult results) {
+      print(
+          'Current Working Dir: ${AppConfig.getMacOSWorkingDir()}/TestProject');
+      print('Exit Code: ${results.exitCode}');
+      print('Output: ${results.stdout}');
+      print('Error: ${results.stderr}');
+      output = results.stdout.toString();
+    });
 
     return "";
   }
